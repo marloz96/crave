@@ -4,6 +4,8 @@
 
 ![CRAVE](docs/wordmark.png)
 
+**Project status and next steps:** [docs/WHERE_I_LEFT_OFF.md](docs/WHERE_I_LEFT_OFF.md)
+
 ## What's inside
 
 | Part | Tech | Where |
@@ -32,10 +34,11 @@
 
 ```bash
 npm install
-npx expo start          # scan the QR code with the Expo Go app, or press w for web
+npx expo login          # free Expo account
+npx expo start --go     # scan the QR code with the Expo Go app, or press w for web
 ```
 
-The app connects to the CRAVE Supabase project set in `src/config.ts`. To try it with built-in sample data instead (businesses and jobs around Des Moines, stored on the device), run `EXPO_PUBLIC_DEMO=1 npx expo start`.
+The app connects to the CRAVE Supabase project set in `src/config.ts`. To try it with built-in sample data instead (businesses and jobs around Des Moines, stored on the device), run `EXPO_PUBLIC_DEMO=1 npx expo start --go`.
 
 Note: maps, video, and payments use native code. Expo Go covers most of it; for the full app use a development build: `npx eas-cli build --profile development`.
 
