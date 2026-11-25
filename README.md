@@ -35,9 +35,7 @@ npm install
 npx expo start          # scan the QR code with the Expo Go app, or press w for web
 ```
 
-With no `.env`, the app runs in **demo mode**: sample businesses and jobs around Des Moines, Iowa, stored on the device. Everything works except real uploads, resume parsing and payments.
-
-To connect the real backend, copy `.env.example` to `.env` and fill in the Supabase URL and anon key (see `docs/LAUNCH_GUIDE.md`).
+The app connects to the CRAVE Supabase project set in `src/config.ts`. To try it with built-in sample data instead (businesses and jobs around Des Moines, stored on the device), run `EXPO_PUBLIC_DEMO=1 npx expo start`.
 
 Note: maps, video, and payments use native code. Expo Go covers most of it; for the full app use a development build: `npx eas-cli build --profile development`.
 
