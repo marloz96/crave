@@ -1,25 +1,75 @@
 {
   "expo": {
-    "name": "crave",
+    "name": "CRAVE",
     "slug": "crave",
+    "scheme": "crave",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#6C2BFF",
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.craveapp.crave",
+      "buildNumber": "1",
+      "supportsTablet": false,
+      "config": { "usesNonExemptEncryption": false },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "CRAVE uses your location to show jobs and employers near you on the hiring map.",
+        "NSPhotoLibraryUsageDescription": "CRAVE lets you add photos and videos to your profile.",
+        "NSCameraUsageDescription": "CRAVE lets you take a profile photo or record a video intro.",
+        "NSMicrophoneUsageDescription": "CRAVE records audio for your video intro."
+      }
     },
     "android": {
+      "package": "com.craveapp.crave",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#6C2BFF",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"],
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-video",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "backgroundColor": "#6C2BFF"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "CRAVE uses your location to show jobs and employers near you on the hiring map."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "CRAVE lets you add photos and videos to your profile.",
+          "cameraPermission": "CRAVE lets you take a profile photo or record a video intro."
+        }
+      ],
+      [
+        "react-native-maps",
+        {
+          "androidGoogleMapsApiKey": "REPLACE_WITH_GOOGLE_MAPS_ANDROID_KEY"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
